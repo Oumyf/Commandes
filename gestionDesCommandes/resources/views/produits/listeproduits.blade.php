@@ -63,7 +63,7 @@
     
     <div class="row">
       <div class="col">
-        <h1>Liste des produits de Kane et Frères</h1>
+        <h1>Liste des produits de Kane&Frères</h1>
         <hr>
         <a href="/produit/ajouter" class="btn btn-primary mb-3">Ajouter des produits</a>
         <hr>

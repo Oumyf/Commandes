@@ -9,7 +9,7 @@ class Commande extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['reference','montant_total','etat_commande'];
+    protected $fillable = ['reference','montant_total','etat_commande','user_id'];
 
     public function produits()
     {
