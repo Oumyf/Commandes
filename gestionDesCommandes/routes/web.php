@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\CategorieController;
@@ -34,4 +36,15 @@ Route::post('/commandes', [CommandeController::class, 'store'])->name('commandes
 Route::get('/commandes/{id}/edit', [CommandeController::class, 'edit'])->name('commandes.edit');
 Route::put('/commandes/{id}', [CommandeController::class, 'update'])->name('commandes.update');
 Route::delete('/commandes/{id}', [CommandeController::class, 'destroy'])->name('commandes.destroy');
+
+// Routes pour l'authentification
+Route::get('/inscription', [AuthController::class, 'inscription'])->name('inscription');
+Route::post('/inscription', [AuthController::class, 'inscriptionPost'])->name('inscription');
+
+Route::get('/connexion', [AuthController::class, 'connexion'])->name('connexion');
+Route::post('/connexion', [AuthController::class, 'connexionPost'])->name('connexion');
+
+
+Route::get('/index', [AccueilController::class, 'index'])->name('index');
+Route::delete('/deconnexion', [AuthController::class, 'deconnexion'])->name('deconnexion');
 

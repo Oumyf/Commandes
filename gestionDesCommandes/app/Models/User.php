@@ -19,7 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'nom',
         'email',
-        'password',
+        'mot_de_passe',
     ];
 
     /**
@@ -28,7 +28,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'mot_de_passe',
         'remember_token',
     ];
 
@@ -41,9 +41,15 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'mot_de_passe' => 'hashed',
         ];
     }
+
+     // Ajouter cette méthode pour spécifier le champ personnalisé pour le mot de passe
+     public function getAuthPassword()
+     {
+         return $this->mot_de_passe;
+     }
 
     public function commandes()
     {
